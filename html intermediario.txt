@@ -1,0 +1,260 @@
+FORMULARIO - 1
+
+
+formulario eh importante para capturar email,ter um campo de contato com o dono da pagina,entre outras coisas
+
+formulario eh a conexao entre o front-end e o back-end,sempre que quisermos pedir alguma coisa pro back-end ou enviar dados
+
+o campo de busca do google por exemplo eh um formulario
+
+formulario eh o responsavel em fazer a integracao entre o front-end com o back-end
+
+a integracao com o front e back eh feita atravez do formulario,sempre que precisa de algum dado sendo passado pelo usuario
+
+vamos ver a parte de backend mais pra frente
+
+para criar uma lista de emails eh so contratar algums servico como o mailchimp,la voce cadastra todos os emails dos usuarios 
+
+para disparar um email para todos ao msm tempo
+
+nao precisa fazer a parte do backend,pq isso ja eh feito pelo mailchimp,apenas criar o formular e usar o codigo do email chimp
+
+
+-----------------------------------------------------------
+
+
+FORMULARIO - 2
+
+
+para criar um formularios primeiro precisamos declarar nossa tag <form></form>
+
+
+dentro do form vaoe star todos os campos que valor ultilizar,quando voce clica no botao enviar os campos seram enviados para o back-end
+
+
+para enviar precisamos de 3 coisas,o method(metodo de envio,pode ser GET ou POST) ,e precisamos dizer qual eh a action="http://", e um botao
+
+
+estrutura do form=> <form method="GET" action="http://site.com/cadastro"> , so uma url para exemplo
+
+no action fica o endereco que vai precisar para criar uma requisicao
+
+se seu front-end estiver rodando no msm endereco que seu webservice,apenas use action="/login"> por exemplo,se fosse uma pag de login
+
+se for em um outro dominio precisa usar o action="http://site.com/algo"
+
+dentro do form vamos por os campos do nosso formulario,vamos aprender os 2 principais depois aprendemos outros
+
+
+principal campo eh o de texto <input type="text" name="email"> , para email
+
+
+campo de envio <input type="submit"> ,eh um botao para enviar os dados para o back-end
+
+
+method="GET" -> aparece na url do site, mt usado em envio de pesquisa e busca
+
+method="POST" -> nao sera mostrado na url,usado para envio de senha e login
+
+o seu back-end tem q esperar um POST ou um GET,se voce mandar um post e o back estiver esperando um get vai dar erro
+
+
+
+-----------------------------------------------------------
+
+
+TIPOS DE INPUT
+
+
+
+vamos ver diversos tipos de inputs
+
+para senha use <input type="password" name="senha"> a senha fica em forma de circulos e nao aparecem, tem que usar o method="POST"
+
+input de checkbox <input type="checkbox" name="curso"> curso
+
+<input type="checkbox" name="curso" value="op1"> ,o valor eh usado para diferenciar cada opcao no back-end 
+
+input do tipo radio onde so pode ter uma opcao marcada,usado para definir seu sexo <input type="radio" name="gender" value="m">masc
+
+para so poder ficar 1 marcado os dois tem que ter os msm nomes,nesse caso eh gender,e valores diferentes para o back-end reconhecer a opcao
+
+
+para uma das opcoes do radio ja vir marcada como padrao,use <input type="radio" name="gender" value="m" checked>,agora eh a opcao padrao
+
+botao para enviar <input type="submit">
+
+input para resetar tudo que foi preenchido <input type="reset">
+
+para mudar o nome que aparece o botao,use o value <input type="reset" value="Limpar"> assim o nome sera limpar
+
+e para o botao de enviar o mesmo,use o value <input type="submit" value="Enviar"> agora o nome que aparecera sera Enviar
+
+
+-----------------------------------------------------------
+
+
+SELECT
+
+
+nem so de input vive um <form>,vamos ver uma tag para o formulario chamada select,bastante usada na hora de escolher seu estado por ex
+
+<select name="estado"> <select>
+
+dentro do select use:<option value="RJ">Rio de Janeiro</option> nesse caso vai aparecer no scrool do option a opcao Rio de Janeiro
+
+e assim voce por por diversos option com value diferentes e nomes diferentes para ficar dentro do msm select
+
+e botamos como sempre o botao para enviar os dados <input type="submit">
+
+o value que vai ser enviado para o back-end
+
+para por alguma option como padrao,use o selected: <option value="SP" selected> Sao Paulo</option>
+
+para mostrar apenas 10 opcoes e com o scroll para ver as demais,use no select <select name="estado" size="10">
+
+e para marcar diversas opcoes use o multiple no select <select name="estado" size="10" multiple >
+
+
+
+-----------------------------------------------------------
+
+
+TEXTAREA
+
+
+vamos ver um elemento muito importante para criar fomularios de contato
+
+para termos um formulario de contato por ex,vamos ter um <input type="texxt" name="assunto">
+
+e um outro campo onde o usuario vai escrever sua mnsg,usando o <textarea name="mensagem"></textarea>
+
+eh preciso ter o name em qualquer um dos elementos para enviar a informacao para o back,se n tiver o name nao tem como enviar os dados 
+
+e pode estilizar tudo com o css para deixar tudo mais bonito
+
+
+
+-----------------------------------------------------------
+
+
+HTML 5 INTRO
+
+
+html 5 eh uma nova versao do html
+
+no html 5 algumas tags novas surgiram,que nao existiam antes do html5 podendo ter inconpatibilidade com outros brawsers
+
+alguns navegadores podem nao reonhecerem as novas tags
+
+para saber por antemao se os navegadores aceitam o html,eh so acessar o site: www.caniuse.com/html5
+
+algumas opcoes de input do form vieram com o novo html
+
+por exemplo poder selecionar uma data dentro do formulario
+
+
+
+-----------------------------------------------------------------
+
+
+INPUT HTML 5
+
+
+vamos ver os novos tipos de input para formularios que vieram com o html5
+
+nem todos os tipos de inputs vao rodar em todos os navegadores
+
+importante textar em o mais variado tipo de navegadores que voce puder
+
+primeiro tipo eh o tipo color para selecionar infitas caixas cores na tabela de cor <input type="color" name="cor">
+
+input para por data ano-mes-dia <input type="date" name="data">
+
+pode por uma data maxima(max) ou minima(min) <input type="date" name="data" max="2018-12-31">
+
+para selecionar o dia e hora use o <input type="datetime-local" name="" max="2018-12-15">
+
+campo para envio de arquivo <input type="file" name="arquivo"> para enviar um arquivo para o servidor o method="POST" precisa ser post
+
+input para numeros <input type="number" name="numerico"> pode por um min e max <input type="number" name="numerico" min="5" max="10">
+
+uma linha para intervalos numericos (--|-------) , <input type="range" min="5" max="10" name="intervalo" value="7"> , value = numero inicial
+
+para por o telefone use <input type="tel" name="telefone"> , no celular vai aparecer apenas os numeros para por o numero do celular
+
+para por email,use <input type="email" name="email"> , e verifica se oq esta sendo digitado eh um email 
+
+e para enviar <input type="submit">
+
+
+
+------------------------------------------------------------
+
+
+TAGS SEMANTICAS
+
+
+vamos ver as tags semanticas que vieram junto com o html5
+
+para os buscadores do google saberem oq eh cada coisa no seu site
+
+para cabecalho da nossa use a tag <header></header>
+
+para navegacao use a tag <nav></nav>
+
+para rodape use a tag <footer></footer>
+
+para o principal conteudo do nosso site usamos a tag <main></main> , so pode ser usado uma vez e vai ter todo o conteudo da nossa pagina
+
+existe ainda 2 tags as tags <section>secao</section> e <article>artigo</article>
+
+o section vai ser uma secao do seu site,para poder organizar ele melhor em secoes
+
+o article eh um artigo do nosso site
+
+sempre que formos ulitilizar a tag <article> temos q ter em mente q o conteudo que estiver tem q fazer sentido independente,por ex noticias
+
+article= sempre quando o conteudo fizer sentido independente da pagina
+
+section por exemplo,noticias de novela e outra para esporte e outra para noticias sobre politica e ali tendo varias article
+
+article para uma pag que fala sobre uma noticia
+
+pode ter tag section dentro de article e tag article dentro de section,isso eh super normal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
